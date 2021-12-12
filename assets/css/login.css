@@ -369,9 +369,10 @@
     padding: 20px;
   }
   .container__login-wrap{
-    flex-direction: column;
-    overflow: auto;
+    height: 100%;
+    flex-direction: column;  
   }
+  
   .container__login-introduce-wrap{
     width: 100%;
     margin-bottom: 6px;
