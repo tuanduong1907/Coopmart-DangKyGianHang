@@ -448,7 +448,12 @@
   }
 
   #toast {
-    right: 0px;
+    right: 4px;
+  }
+
+  .toast{
+    min-width: 300px;
+    max-width: 350px;
   }
 
 }
