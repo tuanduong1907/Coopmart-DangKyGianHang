@@ -1,0 +1,96 @@
+:root{
+    --primary-background: #133C8B;
+    --primary-color: #ED0677;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family:'SF Pro Display', sans-serif;
+    src:local('☺︎'), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_ultralight.woff") format("woff"), url("http://www.apple.com/wss/fonts/SF-Pro-Display/v1/sf-pro-display_ultralight.ttf") format("truetype");
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container__login-form-wrap.hidden {
+    display: none;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    font-weight: 600;
+    border-radius: 16px;
+    width: 146px;
+    height: 44px;
+    border: none;
+    color: #fff;
+    box-shadow: inset 0px -2px 0px #D50269;
+    cursor: pointer;
+    user-select: none;
+    transition: ease .2s;
+    -webkit-transition: ease .2s;
+    -moz-transition: ease .2s;
+    -ms-transition: ease .2s;
+    -o-transition: ease .2s;
+}
+
+
+.btn:hover{
+    opacity: .8;
+}
+
+.btn.btn-secondary:focus,
+.btn:focus{
+    background:  linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #ED0677;
+    color: #ffff;
+}
+
+
+.btn.btn-secondary {
+    border: 2px solid #ED0677;
+    font-weight: 600;
+    background-color: #ffff;
+    color: var(--primary-color);
+    box-shadow: none;
+    transition: ease .2s;
+    -webkit-transition: ease .2s;
+    -moz-transition: ease .2s;
+    -ms-transition: ease .2s;
+    -o-transition: ease .2s;
+}
+.btn.btn-secondary:hover{
+    background-color: var(--primary-color);
+    opacity: .8;
+    color: #ffff;
+
+}
+
+.text-center{
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
