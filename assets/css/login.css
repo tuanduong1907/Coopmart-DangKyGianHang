@@ -53,7 +53,7 @@
 
 .container__login-form{
   width: 748px;
-  height: 100%;
+  height: 100vh;
   right: 0;
   top: 0px;
   background: #F9F9F9;
@@ -286,6 +286,7 @@
 
   .container__login-form{
     width: 100%;
+    height: 100%;
     padding-bottom: 72px;
     border-radius: 30px 30px 0px 0px;
     animation:sideUp linear .5s;
