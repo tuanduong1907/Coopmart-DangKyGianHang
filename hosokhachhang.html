@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co.opmart - Đăng Ký Gian Hàng</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+</head>
+<body>
+    <div id="main">
+        <header class="header">
+            <div class="grid">
+                <!-- Nav PC -->
+                <div id="navbar">
+                    <div class="navbar__logo">
+                        <a href="">
+                            <img src="./assets/image/logo-coop.png" alt="" class="navbar__logo-img">
+                        </a>
+                    </div>
+                    <ui class="navbar__menu-list">
+                        <li class="navbar__menu-item">
+                            <a href="./hosokhachhang.html" class="navbar__menu-link navbar__menu-link--actived">Hồ sơ khách hàng</a>
+                        </li>
+                        <li class="navbar__menu-item">
+                            <a href="./dangkyhoso.html" class="navbar__menu-link">Đăng ký hồ sơ thẩm định</a>
+                        </li>
+                        <li onclick="handleMenuNav(event)" class="navbar__menu-item">
+                           <svg class="navbar__menu-item-icon" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12.2955C14.7614 12.2955 17 10.0569 17 7.29547C17 4.53405 14.7614 2.29547 12 2.29547C9.23858 2.29547 7 4.53405 7 7.29547C7 10.0569 9.23858 12.2955 12 12.2955Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M20.59 22.2955C20.59 18.4255 16.74 15.2955 12 15.2955C7.26003 15.2955 3.41003 18.4255 3.41003 22.2955"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                           <ul class="navbar__sub-menu-list">
+                               <li class="navbar__sub-menu-item">
+                                   <a href="./login.html" class="navbar__sub-menu-link">
+                                       Đăng xuất
+                                       <i class="navbar__sub-menu-icon fas fa-sign-out-alt"></i>
+                                    </a>
+                                </li>
+                           </ul>
+                        </li>
+                    </ui>
+                </div>
+
+                <!-- Nav Mobile -->
+                <div id="navbar__mobile">
+                    <div class="navbar__mobile-logo">
+                        <a href="">
+                            <img src="./assets/image/logo-coop.png" alt="" class="navbar__mobile-logo-img">
+                        </a>
+                    </div>
+                    <h2 class="navbar__mobile-heading">
+                        Đăng Ký Hồ Sơ Thẩm Định
+                    </h2>
+                    <div class="navbar__mobile-menu-wrap">
+                        <input type="checkbox" hidden  name="" class="header_navbar-bar-input" id="navbar-input">
+                        <label for="navbar-input" class="overlay"></label>
+                        <label for="navbar-input">
+                            <img src="./assets/image/menu-icon.svg" alt="" class="navbar__mobile-menu-icon">
+                        </label>
+                        
+                        <ul class="navbar__mobile-sub-menu-list" >
+                            <li class="navbar__mobile-sub-menu-item">
+                                <a href="./dangkyhoso.html" style="font-weight: 500;" class="navbar__sub-menu-link">
+                                    Đăng ký hồ sơ thẩm định
+                                </a>
+                            </li>
+                            <li class="navbar__mobile-sub-menu-item">
+                                <a href="./hosokhachhang.html" class="navbar__sub-menu-link navbar__menu-link--actived">
+                                    Hồ sơ khách hàng
+                                </a>
+                            </li>
+                            <li class="navbar__mobile-sub-menu-item">
+                                <a href="./login.html" class="navbar__sub-menu-link">
+                                    Đăng xuất
+                                    <i class="navbar__sub-menu-icon fas fa-sign-out-alt"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="grid container-wrap">
+                <div class="container__header-list">
+                    <h2 class="container__header-list-heading">
+                        Chọn Ngành Nghề
+                    </h2>
+                    <div class="container__header-list-option-wrap">
+                        <input type="checkbox" hidden  name="" class="header_navbar-bar-input-job" id="navbar-input-job">
+                        <div class="overlay1"></div>
+                            <div onclick="handleMenuListJob(event)" class="container__header-list-option-btn">
+                                Danh Sách
+                                <img src="./assets/image/list-option-icon.svg" alt="" class="container__header-list-option-btn-icon">
+                            </div>
+                        <div class="container__header-list-option">
+                            <div class="container__header-list-option-item">
+                                Mỹ phẩm
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Quần áo
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Trang sức
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Sửa rửa mặt
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Giày
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Mũ
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Cá khô
+                            </div>
+                            <div class="container__header-list-option-item">
+                                Thịt bò
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="toast"></div>
+
+                <!-- Container Body Selection -->
+                <div class="container__body">
+                    <div class="container__body-title">
+                        <p class="container__body-title-text">Các giấy tờ cần thiết đăng ký gian hàng -</p>
+                        <div onclick="handleMenuListJob(event)"  class="container__body-title-value">Mỹ Phẩm</div>
+                    </div>
+                    <div class="container__body-content-wrap">
+                        <div class="container__body-image-wrap">
+                            <h2 class="container__body-heading">
+                                <span>Upload File</span>
+                                <span onclick="handleMenuCategory(event)" class="container__btn-options-mobile">
+                                    Chọn giấy tờ
+                                    <img src="./assets/image/list-option-icon.svg" alt="" class="container__header-list-option-btn-icon">
+                                </span>
+                            </h2>
+
+                            <div class="display_image-wrap display_image-wrap-custom">
+                                <i class="fas fa-arrow-left prev-icon"></i>
+                                <i class="fas fa-arrow-right next-icon"></i>
+                                <div class="display_image-wrap-item">
+                                    <div class="display_image-item">
+                                        <img src="./assets/image/img-1.jpg" alt="">
+                                    </div>
+                                    <div class="display_image-item">
+                                        <img src="./assets/image/img-1.jpg" alt="">
+                                    </div>
+                                    <div class="display_image-item">
+                                        <img src="./assets/image/img-1.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="container__body-info-wrap">
+                            <h2 class="container__body-heading container__body-heading-mobile ">
+                                Chọn giấy tờ
+                            </h2>
+                            <ul class="container__body-info-list">
+                                <li class="container__body-info-item">
+                                    1. Giấy đề nghị đăng ký giấy phép kinh doanh
+                                </li>
+                                <li class="container__body-info-item">
+                                    2. Giấy chứng nhận đủ điều kiện an toàn
+                                </li>
+                                <li class="container__body-info-item">
+                                    3. Giấy Chứng Nhận Đăng Ký Nhãn Hiệu
+                                </li>
+                                <li class="container__body-info-item">
+                                    4. Giấy tờ chứng minh nguồn gốc xuất xứ hàng hóa
+                                </li>
+                                <li class="container__body-info-item">
+                                    5. Giấy tờ khác theo quy định pháp
+                                </li>
+                                <li class="container__body-info-item">
+                                    6. Giấy tờ 6
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FOOTER SECTION -->
+        <footer class="footer">
+            <div class="grid footer__wrap">
+                <div class="footer__social">
+                    <div class="footer__social-item">
+                        <a href="#">
+                            <img src="./assets/image/facebook-icon.svg" alt="" class="footer__social-icon">
+                        </a>
+                    </div>
+
+                    <div class="footer__social-item">
+                        <a href="#">
+                            <img src="./assets/image/github-icon.svg" alt="" class="footer__social-icon">
+                        </a>
+                    </div>
+
+                    <div class="footer__social-item">
+                        <a href="#">
+                            <img src="./assets/image/instagram-icon.svg" alt="" class="footer__social-icon">
+                        </a>
+                    </div>
+
+                    <div class="footer__social-item">
+                        <a href="#">
+                            <img src="./assets/image/telegra-icon.svg" alt="" class="footer__social-icon">
+                        </a>
+                    </div>
+
+                    <div class="footer__social-item">
+                        <a href="#">
+                            <img src="./assets/image/spotify-icon.svg" alt="" class="footer__social-icon">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="footer__menu-wrap">
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">
+                                About
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">
+                                Features
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">
+                                Pricing
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">
+                                Gallery
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="footer__menu-link">
+                                Team
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            
+            <!-- CopyRight -->
+            <div class="grid">
+                <div class="footer__copyright">
+                    © Copyright 2021 by #noname
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./assets/jquery/jquery-min.js"></script>
+
+    <script src="./assets/js/toast.js"></script>
+    <script src="./assets/js/home.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+</html>
