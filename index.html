@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co.opmart - Đăng Ký Gian Hàng</title>
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+</head>
+<body>
+    <div id="main">
+        <!-- CONTAINER SECTION -->
+        <div class="container__login-wrap">
+            <div class="container__login-background">
+                <div class="container__login-logo">
+                    <img src="./assets/image/logo-coop.png" alt="" class="container__login-img">
+                </div>
+                <div class="container__login-introduce-wrap">
+                    <h1 class="container__login-introduce-heading">Đăng ký thuê mặt bằng tại Co.opmart</h1>
+                    <p class="container__login-introduce-content">
+                        Là nhà bán lẻ hàng đầu Việt Nam, với gần 80 cửa hàng trên khắp toàn quốc, hệ thống Co.opmart luôn là sự lựa chọn hàng đầu của mọi gia đình trong mua sắm phục vụ cho nhu cầu hàng ngày và vui chơi, giải trí, ẩm thực.
+                    </p>
+                </div>
+                <img src="./assets/image/banner-login.svg" alt="" class="container__banner-login">
+            </div>
+
+            <!-- Login Form Section -->
+            <div class="container__login-form">
+                <div class="container__login-form-wrap" id="login-form">
+                    <div id="toast"></div>
+                    <img src="./assets/image/image-form-login.svg" alt="" class="container__login-form-img">
+                    <div class="container__login-form-body">
+                        <h1 class="container__login-form-heading">
+                            Xin Chào!
+                        </h1>
+                        <p class="container__login-form-desc">
+                            Vui lòng đăng nhập để tiếp tục
+                        </p>
+                        <div class="container__login-input-wrap">
+                            <div class="container__login-input-item">
+                                <img src="./assets/image/user-icon.svg" alt="" class="container__login-input-icon">
+                                <input type="text" placeholder="Nhập tài khoản" name="input" class="container__login-input">
+                            </div>
+                            <div class="container__login-input-item">
+                                
+                                <img src="./assets/image/lock-icon.svg" alt="" class="container__login-input-icon">
+                                <input type="password" placeholder="Nhập mật khẩu" name="input" class="container__login-input">
+                            </div>
+                        </div>
+                        
+                        <a href="#"class="container__login-text">Quên mật khẩu?</a>
+                        <div class="container__login-btn-wrap">
+                            <a href="./dangkyhoso.html">
+                                <button class="btn container__login-btn">
+                                    Đăng Nhập
+                                </button>
+                            </a>
+                            <button class="btn btn-secondary container__login-btn" id="login-btn" >Đăng Ký</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Reg Form Section-->
+                <div class="container__login-form-wrap hidden" id="reg-form">
+                    <img src="./assets/image/image-form-login.svg" alt="" class="container__login-form-img">
+                    <form action="" method="post" id="form-1" class="container__login-form-body"  >
+                        <p class="container__login-form-desc text-center">
+                            Vui lòng nhập thông tin đăng ký
+                        </p>
+                        <div class="container__login-input-wrap">
+                            <div class="container__login-input-item">
+                                <input type="text" placeholder="Nhập họ và tên" name="fullname" id="fullname" class="container__login-input form-control">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="container__login-input-item">
+                                <input type="text" placeholder="Nhập tài khoản" name="user"  id="user" class="container__login-input form-control">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="container__login-input-item">
+                                <input type="email" placeholder="Nhập email" name="email" id="email" class="container__login-input form-control form-control">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="container__login-input-item">
+                                <input type="password" placeholder="Nhập mật khẩu" name="password" id="password" class="container__login-input form-control">
+                                <span class="form-message"></span>
+                            </div>
+                            <div class="container__login-input-item">
+                                <input type="password" placeholder="Nhập lại mật khẩu" id="password_confirmation"  name="password_confirmation" class="container__login-input form-control">
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+                        <a href="#"class="container__login-text">Đã có tài khoản</a>
+                        <div class="container__reg-btn-wrap">
+                            <button onclick="showSuccessToast()" class="btn btn--success container__reg-btn" id="reg-btn">Đăng Ký</button>
+                        </div>
+                    </form>
+                </div>
+   
+            </div>
+        </div>
+    </div>
+
+
+<script src="./assets/js/validation.js"></script>
+<script src="./assets/js/toast.js"></script>
+<script src="./assets/js/app.js"></script>
+  <!-- Validator  -->
+<script>
+    Validator({
+        form: '#form-1',
+        formGroupSelector: '.container__login-input-item',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
+            Validator.minLength('#fullname', 6),
+            Validator.isRequired('#user', 'Vùi lòng nhập tài khoản của bạn'),
+            Validator.minLength('#user', 5),
+            Validator.isRequired('#email', 'Vui lòng nhập email của bạn'),
+            Validator.isEmail('#email'),
+            Validator.isRequired('#password', 'Vui lòng nhập mật khẩu của bạn'),
+            Validator.minLength('#password', 5),
+            Validator.isRequired('#password_confirmation','Vui lòng nhập mật khẩu của bạn'),
+            Validator.isComfirmed('#password_confirmation', function() {
+                return document.querySelector('#form-1 #password').value
+            }, 'Mật khẩu nhập lại không chính xác')
+        ],
+        onSubmit: function(data) {
+            // Call Api
+            console.log(data)
+        }
+    });
+</script>
+<script>
+    function showSuccessToast() {
+        toast({
+            title: "Thành công!",
+            message: "Đăng ký tài khoản thành công. Hãy đăng nhập tại đây",
+            type: "success",
+            duration: 2000
+        });
+    }
+</script>
+</body>
+</html>
