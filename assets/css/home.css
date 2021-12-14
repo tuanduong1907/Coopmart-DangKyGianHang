@@ -711,6 +711,14 @@ footer {
     .slick-initialized .slick-slide{
         padding: 0;
     }
+      #toast {
+    right: 4px;
+  }
+
+  .toast{
+    min-width: 300px;
+    max-width: 350px;
+  }
 }
 
 /* PC Low */
