@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co.opmart - Đăng Ký Gian Hàng</title>
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      />
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/home.css">
 </head>
@@ -52,7 +57,7 @@
                         </a>
                     </div>
                     <h2 class="navbar__mobile-heading">
-                        Đăng Ký Hồ Sơ Thẩm Định
+                        Hồ sơ khách hàng
                     </h2>
                     <div class="navbar__mobile-menu-wrap">
                         <input type="checkbox" hidden  name="" class="header_navbar-bar-input" id="navbar-input">
@@ -88,7 +93,7 @@
             <div class="grid container-wrap">
                 <div class="container__header-list">
                     <h2 class="container__header-list-heading">
-                        Chọn Ngành Nghề
+                        Ngành Nghề Đăng Ký
                     </h2>
                     <div class="container__header-list-option-wrap">
                         <input type="checkbox" hidden  name="" class="header_navbar-bar-input-job" id="navbar-input-job">
@@ -106,21 +111,6 @@
                             </div>
                             <div class="container__header-list-option-item">
                                 Trang sức
-                            </div>
-                            <div class="container__header-list-option-item">
-                                Sửa rửa mặt
-                            </div>
-                            <div class="container__header-list-option-item">
-                                Giày
-                            </div>
-                            <div class="container__header-list-option-item">
-                                Mũ
-                            </div>
-                            <div class="container__header-list-option-item">
-                                Cá khô
-                            </div>
-                            <div class="container__header-list-option-item">
-                                Thịt bò
                             </div>
                         </div>
                     </div>
@@ -143,19 +133,22 @@
                                 </span>
                             </h2>
 
-                            <div class="display_image-wrap display_image-wrap-custom">
-                                <i class="fas fa-arrow-left prev-icon"></i>
-                                <i class="fas fa-arrow-right next-icon"></i>
-                                <div class="display_image-wrap-item">
-                                    <div class="display_image-item">
-                                        <img src="./assets/image/img-1.jpg" alt="">
-                                    </div>
-                                    <div class="display_image-item">
-                                        <img src="./assets/image/img-1.jpg" alt="">
-                                    </div>
-                                    <div class="display_image-item">
-                                        <img src="./assets/image/img-1.jpg" alt="">
-                                    </div>
+                            <div class="container__body-image-upload-list">
+                                
+                                <div class="container__body-image-upload-item">
+                                    <img src="./assets/image/img-1.jpg" alt="" class="container__body-image-upload-img">
+                                </div>
+
+                                <div class="container__body-image-upload-item">
+                                    <img src="./assets/image/img-1.jpg" alt="" class="container__body-image-upload-img">
+                                </div>
+
+                                <div class="container__body-image-upload-item">
+                                    <img src="./assets/image/img-1.jpg" alt="" class="container__body-image-upload-img">
+                                </div>
+
+                                <div class="container__body-image-upload-item">
+                                    <img src="./assets/image/img-1.jpg" alt="" class="container__body-image-upload-img">
                                 </div>
                             </div>
 
@@ -167,25 +160,43 @@
                             <ul class="container__body-info-list">
                                 <li class="container__body-info-item">
                                     1. Giấy đề nghị đăng ký giấy phép kinh doanh
+                                    <i class="check-icon fas fa-check"></i>
                                 </li>
                                 <li class="container__body-info-item">
                                     2. Giấy chứng nhận đủ điều kiện an toàn
+                                    <i class="check-icon fas fa-check"></i>
                                 </li>
-                                <li class="container__body-info-item">
+                                <li onclick="handleShowNotifi(event)" class="container__body-info-item ">
                                     3. Giấy Chứng Nhận Đăng Ký Nhãn Hiệu
+                                    <i class="check-icon fas fa-check check-icon--none"></i>
                                 </li>
                                 <li class="container__body-info-item">
                                     4. Giấy tờ chứng minh nguồn gốc xuất xứ hàng hóa
+                                    <i class="check-icon fas fa-check"></i>
                                 </li>
                                 <li class="container__body-info-item">
                                     5. Giấy tờ khác theo quy định pháp
+                                    <i class="check-icon fas fa-check"></i>
                                 </li>
                                 <li class="container__body-info-item">
                                     6. Giấy tờ 6
+                                    <i class="check-icon fas fa-check"></i>
                                 </li>
                             </ul>
                         </div>
-
+                        <div class="notifi-check">
+                                <div class="notifi-check-header">
+                                    <img src="./assets/image/notification-bing.svg" alt="">
+                                    Chưa đủ yêu cầu
+                                </div>  
+                                <p>Hình ảnh mờ, cần upload lại rõ nét hơn !</p>
+                                <div class="notifi-check-btn-wrap">
+                                    <a href="./dangkyhoso.html">
+                                        <button class="btn notifi-check-btn">Đi Tới Trang</button>
+                                    </a>
+                                    <button onclick="handleCloseNotifi(event)" class="btn btn-secondary notifi-check-btn">Đóng</button>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -266,10 +277,33 @@
         </footer>
     </div>
 
-    <script src="./assets/jquery/jquery-min.js"></script>
 
     <script src="./assets/js/toast.js"></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
     <script src="./assets/js/home.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Slider Image -->
+    <script>
+
+        $(document).ready(function(){
+        $('.container__body-image-upload-list').slick({
+            slidesToShow: 1,
+            infinite: false,
+            prevArrow:"<button type='button' class='slick-prev pull-left'><i class='slick-arrow-icon fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow:"<button type='button' class='slick-next pull-right'><i class='slick-arrow-icon fa fa-angle-right' aria-hidden='true'></i></button>"
+        });
+        });
+
+    </script>
 </body>
 </html>
